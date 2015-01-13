@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name=viewport content="initial-scale=1" />
+  <meta name=description content="Product Designer & Software Developer" />
+  <title>Daryl Ginn</title>
+  <link href=/dist/bundle.css rel=stylesheet />
+</head>
+<body>
+  <div class=wrap>
+    <header class=site-header role=banner>
+      <h1>Daryl Ginn</h1>
+      <p>I design and develop things for
+      humans. Somethings cats, too. But
+      not really.</p>
+    </header>
+    <main class=site-main role=main>
+      {{template "soundcloud" .}}
+      {{template "github" .}}
+    </main>
+    <footer class=site-footer role=contentinfo>
+      <p>You can also get hold of me
+      via <a href=mailto:hi@daryl.im>Email</a>
+      or <a href=//twitter.com/darylginn>Twitter</a>.
+      <p class=copy>&copy; {{year}} Daryl Ginn</p>
+    </footer>
+  </div>
+</body>
+</html>

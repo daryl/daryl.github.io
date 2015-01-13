@@ -1,0 +1,20 @@
+{{define "soundcloud"}}
+<section class=sc>
+  <header>
+    <h3>Listening to</h3>
+    <a class=action href=//soundcloud.com/darylginn>
+      <img src=/img/arrow-sc.svg width=15 height=15 />
+      SoundCloud
+    </a>
+  </header>
+
+  <div class=tracks>
+    {{range .SC}}
+    <a href={{.permalink_url}} target=_blank>
+      <span class=overlay></span>
+      <img src={{.artwork_url}} width=75 height=75 />
+    </a>
+    {{end}}
+  </div>
+</section>
+{{end}}

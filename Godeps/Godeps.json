@@ -1,0 +1,10 @@
+{
+	"ImportPath": "github.com/daryl/daryl",
+	"GoVersion": "go1.3.3",
+	"Deps": [
+		{
+			"ImportPath": "github.com/daryl/cash",
+			"Rev": "e6411279bc8bb503f27e058cea9225b181d9f45a"
+		}
+	]
+}
