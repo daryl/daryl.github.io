@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font: 400 13px/1.5 Aktiv Grotesk;
+  font: 400 13px/1.5 Aktiv Grotesk, aktiv-grotesk-std, Helvetica Neue, Helvetica, Arial;
   color: #000;
 }
 
@@ -20,8 +20,8 @@ a {
 }
 
 a:hover, a:hover * {
-  cursor: pointer;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 h1, h3 {
@@ -43,7 +43,8 @@ h3 {
   margin: auto;
 }
 
-.wrap > *, .site-main > * {
+.wrap > *,
+.site-main > * {
   margin: 0 0 20px;
 }
 
@@ -115,13 +116,6 @@ h3 {
   float: left;
 }
 
-.tracks a x-spin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%; left: 50%;
-  z-index: -1;
-}
-
 .tracks a .overlay {
   background: #333;
   position: absolute;
@@ -157,7 +151,7 @@ h3 {
   top: 0; right: 0;
 }
 
-.error p {
+body.error p {
   position: absolute;
   font-size: 24px;
   transform: translate(-50%, -50%);

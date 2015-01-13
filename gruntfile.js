@@ -12,6 +12,9 @@ module.exports = function(grunt) {
     },
     myth: {
       default: {
+        options: {
+          compress: true
+        },
         files: {
           'public/dist/bundle.css': 'app/styles/app.css'
         }
