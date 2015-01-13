@@ -1,1 +1,1 @@
-web: ./daryl -port=$PORT
+web: daryl
