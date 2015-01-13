@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"regexp"
+	"strings"
 )
 
 type I struct {
@@ -34,9 +34,7 @@ func (i *I) Favorites(uid int) []interface{} {
 }
 
 func artworkToHD(src []byte) []byte {
-	w := []byte("-t500x500")
-	r, _ := regexp.Compile("-large")
-	s := r.ReplaceAll(src, w)
-
-	return s
+	str := string(src)
+	str = strings.Replace(str, "-large", "-t500x500", -1)
+	return []byte(str)
 }
