@@ -24,9 +24,8 @@ type Cash struct {
 }
 
 type item struct {
-	data    interface{}
-	expire  time.Duration
-	touched time.Time
+	data   interface{}
+	expire time.Time
 }
 
 const (
@@ -70,7 +69,7 @@ func (c *Cash) set(k string, v interface{}, d time.Duration) *item {
 	}
 
 	if d != Forever {
-		item.touched = time.Now().Add(d)
+		item.expire = time.Now().Add(d)
 	}
 
 	return item
@@ -91,10 +90,6 @@ func (c *Cash) get(k string) (interface{}, bool) {
 
 	if !ok || item.expired() {
 		return nil, false
-	}
-
-	if item.expire != Forever {
-		item.touched = time.Now()
 	}
 
 	return item.data, true
@@ -161,8 +156,8 @@ func (c *Cash) tick() {
 }
 
 func (i *item) expired() bool {
-	if i.expire != Forever {
-		return time.Now().Sub(i.touched) > i.expire
+	if !i.expire.IsZero() {
+		return time.Now().After(i.expire)
 	}
 	return false
 }

@@ -40,10 +40,6 @@ func main() {
     // Since you can store anything in the
     // cache, when you retrieve the value
     // you must use type assertion.
-    //
-    // Also, each time a value is fetched
-    // the expiration time will be updated
-    // from that point on.
     if v, ok := c.Get("foo"); ok {
         foo = v.(string)
     }
