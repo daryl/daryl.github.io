@@ -88,11 +88,11 @@ func (c *Cash) Get(k string) (interface{}, bool) {
 func (c *Cash) get(k string) (interface{}, bool) {
 	item, ok := c.items[k]
 
-	if !ok || item.expired() {
-		return nil, false
+	if ok && !item.expired() {
+		return item.data, true
 	}
 
-	return item.data, true
+	return nil, false
 }
 
 // Has will return a boolean, which will be true or

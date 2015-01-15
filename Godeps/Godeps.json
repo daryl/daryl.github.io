@@ -4,7 +4,7 @@
 	"Deps": [
 		{
 			"ImportPath": "github.com/daryl/cash",
-			"Rev": "23fcf368e740abbe91f5df2d4229c93d89172663"
+			"Rev": "0cc867cf30758029421e9958774f39a67bfea88d"
 		}
 	]
 }
