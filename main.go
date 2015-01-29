@@ -1,54 +1,27 @@
 package main
 
 import (
-	"github.com/daryl/cash"
-	"github.com/daryl/daryl/lib/gh"
-	"github.com/daryl/daryl/lib/sc"
-	"html/template"
+	"io/ioutil"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
-	"time"
 )
-
-type Page struct {
-	SC, GH []interface{}
-}
 
 var (
-	GH  *gh.I
-	SC  *sc.I
 	mux *http.ServeMux
-	tpl *template.Template
-	C   *cash.Cash
+	tpl = map[string][]byte{}
 )
-
-var fnc = template.FuncMap{
-	"year": func() string {
-		return time.Now().Format("2006")
-	},
-}
 
 func main() {
 	mux = http.NewServeMux()
 
-	C = cash.New(cash.Conf{
-		3 * 60 * time.Minute, -1,
-	})
-
-	GH = gh.New()
-	SC = sc.New(os.Getenv("SCID"))
-
-	tpl = template.New("index.html").Funcs(fnc)
-	tpl = template.Must(tpl.ParseGlob("app/views/*.html"))
+	filepath.Walk("app/views", cacheViews)
 
 	mux.Handle("/", http.FileServer(http.Dir("./public")))
 	http.HandleFunc("/", handler)
 
-	http.ListenAndServe(
-		":"+os.Getenv("PORT"),
-		nil,
-	)
+	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -58,27 +31,27 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.URL.Path != "/" {
-		handle404(w, r)
+		w.WriteHeader(404)
+		w.Write(tpl["404"])
 		return
 	}
 
-	tpl.Execute(w, data())
+	w.Write(tpl["index"])
 }
 
-func handle404(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(404)
-	t, _ := template.ParseFiles("app/views/404.html")
-	t.Execute(w, nil)
-}
-
-func data() *Page {
-	if v, ok := C.Get("data"); ok {
-		return v.(*Page)
+func cacheViews(fp string, fi os.FileInfo, err error) error {
+	if err != nil || fi.IsDir() {
+		return nil
 	}
 
-	data := &Page{SC.Favorites(38834112)[:6], GH.Repos("daryl")}
+	if strings.HasSuffix(fp, "html") {
+		tpl[stripViewPath(fp)], _ = ioutil.ReadFile(fp)
+	}
 
-	C.Set("data", data, 0)
+	return nil
+}
 
-	return data
+func stripViewPath(path string) string {
+	path = strings.TrimPrefix(path, "app/views/")
+	return strings.TrimSuffix(path, ".html")
 }
