@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font: 400 2.8rem/1.5 "ff-meta-serif-web-pro", Georgia;
+  font: 400 2.8rem/1.5 "ff-meta-serif-web-pro", Georgia, Serif;
   color: #000;
 }
 
@@ -26,7 +26,7 @@ html, body, body > * {
 }
 
 .wrap {
-  padding: 5rem;
+  padding: 3rem;
   box-sizing: border-box;
   padding-right: 0;
 }
@@ -42,14 +42,4 @@ footer {
 
 footer a {
   color: #444;
-}
-
-@media (max-width: 28rem) {
-  body {
-    font-size: 2.1rem;
-  }
-  .wrap {
-    width: 32rem;
-    padding: 2rem;
-  }
 }
