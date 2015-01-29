@@ -11,8 +11,12 @@ html {
 }
 
 body {
-  font: 400 2.8rem/1.5 "ff-meta-serif-web-pro", Georgia, Serif;
+  font: 400 2.4rem/1.5 'freight-display-pro', Georgia, Serif;
   color: #000;
+}
+
+p:not(:last-child) {
+  margin: 0 0 1rem;
 }
 
 html, body, body > * {
@@ -26,6 +30,7 @@ html, body, body > * {
 }
 
 .wrap {
+  width: 45rem;
   box-sizing: border-box;
   padding: 3rem;
 }
@@ -35,10 +40,20 @@ main {
 }
 
 footer {
-  font-size: 1.3rem;
-  color: #888;
+  font-size: 1.5rem;
 }
 
 footer a {
-  color: #444;
+  color: #000;
+}
+
+footer nav a:not(:last-child):after {
+  content: '×';
+  color: #888;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@media (max-width: 30rem) {
+  .wrap {width: auto}
 }
