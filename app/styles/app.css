@@ -5,18 +5,17 @@
 }
 
 html {
-  font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font: 400 2.4rem/1.5 'freight-display-pro', Georgia, Serif;
+  font: 400 24px/1.5 'freight-display-pro', Georgia, Serif;
   color: #000;
 }
 
 p:not(:last-child) {
-  margin: 0 0 1rem;
+  margin: 0 0 10px;
 }
 
 html, body, body > * {
@@ -30,9 +29,9 @@ html, body, body > * {
 }
 
 .wrap {
-  width: 45rem;
+  width: 450px;
   box-sizing: border-box;
-  padding: 3rem;
+  padding: 30px;
 }
 
 main {
@@ -40,7 +39,7 @@ main {
 }
 
 footer {
-  font-size: 1.5rem;
+  font-size: 15px;
 }
 
 footer a {
@@ -54,6 +53,6 @@ footer nav a:not(:last-child):after {
   margin: 0 5px;
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 450px) {
   .wrap {width: auto}
 }
