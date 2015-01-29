@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font: 400 24px/1.5 'freight-display-pro', Georgia, Serif;
+  font: 400 20px/1.5 Aktiv Grotesk, 'aktiv-grotesk-std', Georgia, Serif;
   color: #000;
 }
 
@@ -39,7 +39,7 @@ main {
 }
 
 footer {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 footer a {
