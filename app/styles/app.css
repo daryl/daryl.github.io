@@ -26,9 +26,8 @@ html, body, body > * {
 }
 
 .wrap {
-  padding: 3rem;
   box-sizing: border-box;
-  padding-right: 0;
+  padding: 3rem;
 }
 
 main {
