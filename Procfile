@@ -1,1 +1,1 @@
-web: daryl
+web: bin/www

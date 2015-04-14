@@ -1,0 +1,38 @@
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  font-size: 13px;
+  font-family: Helvetica Neue, Helvetica, Arial;
+  line-height: 1.5;
+  align-items: center;
+  margin: 0 0 0 30px;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+p {
+  font-size: 25px;
+}
+
+a {
+  color: #00f;
+}
+
+section:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+nav a:after {
+  clear: both;
+  content: '';
+  display: table;
+}
