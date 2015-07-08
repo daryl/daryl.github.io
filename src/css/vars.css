@@ -1,0 +1,53 @@
+
+:root {
+
+  /**
+   * Document
+   */
+
+  --site-width: 400px;
+  --background: #fff;
+
+  /**
+   * Typography
+   */
+
+  --font-size: 14px;
+  --font-color: #000;
+  --font-family: Helvetica Neue, Helvetica, Sans Serif;
+  --font-mono: Courier New, Courier, Monospace;
+  --font-weight: 400;
+  --line-height: 1.5;
+
+  --h1: 22px;
+  --h4: 14px;
+
+  --h-c: #000;
+
+  --small: 13px;
+  --large: 16px;
+
+  /**
+   * Colours
+   */
+
+  --black: #000;
+
+  --link-n: #000;
+  --link-v: #000;
+
+  /**
+   * Spacing
+   */
+
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-5: 25px;
+  --space-6: 30px;
+  --space-7: 35px;
+  --space-8: 40px;
+
+}
+

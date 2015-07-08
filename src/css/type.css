@@ -1,0 +1,8 @@
+
+h4 {
+  font-size: var(--h4);
+  margin: 20px 0 10px;
+  color: var(--h-c);
+  font-weight: 500;
+}
+

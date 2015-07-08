@@ -1,0 +1,28 @@
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  background: var(--background);
+  font-size: var(--font-size);
+  text-transform: lowercase;
+  color: var(--font-color);
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--link-n);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link-v);
+}
+
