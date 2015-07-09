@@ -8,7 +8,7 @@ wcss:
 	@fswatch-run src/css 'make css'
 
 css:
-	@cssnext src/css/index.css > dist/bundle.css
+	@cssnext -c src/css/index.css > dist/bundle.css
 	@echo ${TS} bundle.css
 
 html:
