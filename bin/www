@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+/**
+ * Babel hooks
+ */
+
+require('babel-core/register');
+require('babel-polyfill');
+
+/**
+ * App
+ */
+
+var app = require('..').default;
+
+/**
+ * Listen
+ */
+
+app.listen(3000);
+
