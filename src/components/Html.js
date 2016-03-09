@@ -1,5 +1,6 @@
 
 import {element} from 'deku';
+import App from './App';
 
 /**
  * Render
@@ -9,13 +10,13 @@ import {element} from 'deku';
  * @api public
  */
 
-function render({children}) {
+function render() {
   return (
     <html>
     <meta charset="utf-8"/>
     <title>Breh</title>
     <body>
-    {children}
+    <App/>
     </body>
     </html>
   );

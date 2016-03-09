@@ -1,6 +1,6 @@
 
 import {element,string} from 'deku';
-import App from './src/App';
+import {render} from './src/server';
 
 /**
  * Render <App/>
@@ -11,8 +11,7 @@ import App from './src/App';
  */
 
 export default async function(path) {
-  const vnode = <App path={path}/>;
-  const html =  string.render(vnode);
+  const html = await render(path);
   return `<!doctype html>${html}`;
 }
 

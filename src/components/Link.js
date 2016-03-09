@@ -1,6 +1,5 @@
 
 import {element} from 'deku';
-import Html from './Html';
 
 /**
  * Render
@@ -10,13 +9,13 @@ import Html from './Html';
  * @api public
  */
 
-function render({props}) {
-  const {path} = props;
+function render({props,children}) {
+  let {to,...args} = props;
 
   return (
-    <Html>
-      Path: {path}
-    </Html>
+    <a href={to} {...args}>
+      {children}
+    </a>
   );
 }
 
