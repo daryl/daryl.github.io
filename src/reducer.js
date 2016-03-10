@@ -15,6 +15,9 @@ export default reducer;
  */
 
 function reducer(state={}, action) {
+  // Record action
+  state.action = action;
+
   switch(action.type) {
   case 'PATH':
     state.path = action.path;

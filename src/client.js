@@ -30,6 +30,7 @@ window.onload = () => store.dispatch(route());
 
 store.subscribe(function() {
   const obj = store.getState();
+  if('PATH' != obj.action) return;
   obj.route = router(obj.path);
 });
 

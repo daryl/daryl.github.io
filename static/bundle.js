@@ -2605,6 +2605,7 @@ window.onload = function () {
 
 store.subscribe(function () {
   var obj = store.getState();
+  if ('PATH' != obj.action) return;
   obj.route = (0, _router2.default)(obj.path);
 });
 
@@ -2838,6 +2839,9 @@ exports.default = reducer;
 function reducer() {
   var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
   var action = arguments[1];
+
+  // Record action
+  state.action = action;
 
   switch (action.type) {
     case 'PATH':
