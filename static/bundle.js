@@ -2605,7 +2605,7 @@ window.onload = function () {
 
 store.subscribe(function () {
   var obj = store.getState();
-  if ('PATH' != obj.action) return;
+  if ('PATH' != obj.action.type) return;
   obj.route = (0, _router2.default)(obj.path);
 });
 
