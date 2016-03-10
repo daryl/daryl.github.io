@@ -14,15 +14,15 @@ import Logo from './Logo';
 function render() {
   return (
     <div class="Header">
-      <Logo/>
-      <nav>
-        <Link to="/stuff" disabled>
-          Stuff
-        </Link>
-        <Link to="/contact">
-          Contact
-        </Link>
-      </nav>
+    <Logo/>
+    <nav>
+    <Link to="/stuff" disabled>
+    Stuff
+    </Link>
+    <Link to="/contact">
+    Contact
+    </Link>
+    </nav>
     </div>
   );
 }

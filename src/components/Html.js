@@ -14,7 +14,9 @@ function render() {
   return (
     <html>
     <meta charset="utf-8"/>
-    <title>Breh</title>
+    <title>Daryl Ginn</title>
+    <link href="/bundle.css" rel="stylesheet"/>
+    <script src="/bundle.js" defer></script>
     <body>
     <App/>
     </body>

@@ -1,6 +1,5 @@
 
-import {element,string,createApp} from 'deku';
-import Html from './components/Html';
+import {element,createApp} from 'deku';
 import App from './components/App';
 import {createStore} from 'redux';
 import {route} from './actions';
@@ -20,30 +19,26 @@ const store = createStore(reducer);
 const render = createApp(document.body, store.dispatch);
 
 /**
- * Path change
+ * Bootstrap...
  */
 
-store.subscribe(() => {
-  let state = store.getState();
-  let vnext = router(state.path);
-  state.route = vnext;
+window.onload = () => store.dispatch(route());
+
+/**
+ * Update route
+ */
+
+store.subscribe(function() {
+  const obj = store.getState();
+  obj.route = router(obj.path);
 });
 
 /**
  * Render app
  */
 
-store.subscribe(() => {
-  let state = store.getState();
-  render(<App/>, state);
+store.subscribe(function() {
+  const obj = store.getState();
+  render(<App/>, obj);
 });
-
-/**
- * Bootstrap
- */
-
-window.onload = function() {
-  let {pathname} = location;
-  store.dispatch(pathname);
-};
 

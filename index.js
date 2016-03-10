@@ -49,6 +49,7 @@ async function serve(ctx, next) {
     fs.statSync(path);
     ctx.body = fs.createReadStream(path);
     ctx.type = type;
+    return;
   } catch(e) {
     // ...
   }

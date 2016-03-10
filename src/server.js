@@ -3,7 +3,6 @@ import {element,string} from 'deku';
 import Html from './components/Html';
 import router from './router';
 
-
 /**
  * Render <App/>
  *
