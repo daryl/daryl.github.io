@@ -5,10 +5,10 @@ import babel from 'babelify';
 import gulp from 'gulp';
 
 gulp.task('js', () => {
-  const dist = gulp.dest('static');
   const name = rename('bundle.js');
   const opts = {transform: babel};
-  const src = './src/client.js';
+  const dist = gulp.dest('dist');
+  const src = './src/index.js';
 
   return gulp.src(src)
     .pipe(brsfy(opts))

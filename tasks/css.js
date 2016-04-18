@@ -7,7 +7,7 @@ import gulp from 'gulp';
 gulp.task('css', () => {
   const src = './src/css/index.css';
   const name = rename('bundle.css');
-  const dist = gulp.dest('static');
+  const dist = gulp.dest('dist');
 
   const opts = [
     cssnext(),
