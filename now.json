@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "daryl.sh",
+  "alias": ["daryl.sh"],
   "builds": [
     { "src": "index.html", "use": "@now/html-minifier" },
     { "src": "favicon-32x32.png", "use": "@now/static" },
