@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "daryl.sh",
+  "builds": [
+    { "src": "index.html", "use": "@now/html-minifier" },
+    { "src": "favicon-32x32.png", "use": "@now/static" },
+    { "src": "favicon-16x16.png", "use": "@now/static" },
+    { "src": "favicon.ico", "use": "@now/static" },
+    { "src": "*.css", "use": "@now/html-minifier" },
+    { "src": "img/*", "use": "@now/static" }
+  ]
+}
