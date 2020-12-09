@@ -44,7 +44,6 @@ a:hover {
 .container {
   max-width: 512px;
   box-sizing: border-box;
-  text-align: center;
   padding: 0 1rem;
 }
 
