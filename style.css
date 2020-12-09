@@ -41,5 +41,6 @@ a:hover {
 }
 
 p {
+  padding: 0 1rem;
   margin: 0;
 }
